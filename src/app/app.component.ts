@@ -13,19 +13,19 @@ export class AppComponent {
   data: any = {};
 
   constructor(private http: Http) {
-    console.log("hello fellow user");
-    this.getContacts();
-    this.getData();
-  }
-  getData(){
-    return this.http.get(this.apiUrl)
-    .map((res: Response) => res.json())
-  }
+     this.getContacts();
+     this.getData();
+}
+getData(){
+  return this.http.get(this.apiUrl)
+  .map((res: Response) => res.json())
+}
 
 getContacts(){
-  this.getData().subscribe(data =>{
+  this.getData().subscribe(data => {
     console.log(data);
     this.data = data
   })
 }
+
 }
